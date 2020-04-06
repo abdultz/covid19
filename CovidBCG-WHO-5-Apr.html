@@ -1,0 +1,2474 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/worldIndiaLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+
+<title> Covid affected countries (partial) with respect to the BCG Vaccination </title>
+</head>
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#chartdiv {
+  width: 100%;
+  height: 650px;
+}
+.column {
+  float: left;
+  width: 30%;
+}
+
+/* Clear floats after the columns */
+.row {
+  content: "";
+  display: table;
+  clear: both;
+  margin: auto;
+  
+  display: flex;              	/* establish flex container */
+  flex-direction: row;     		/* stack flex items vertically */
+  justify-content: center;    	/* center items vertically, in this case */
+}
+</style>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Shruti;
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<body>
+<div id="head">
+<h1 style="text-align:center">Covid affected countries (partial) with respect to the BCG Vaccination</h1>
+</div>
+<div id="chartdiv"></div>
+<div id="chartdiv1" style="height:600px"></div>
+<p>
+<div class="row" style="margin: 0 auto;">
+<div class="column">
+<table style='border-collapse:collapse'>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #ED7D31 1.0pt;
+  border-right:none;background:#ED7D31;height:17.0pt'>
+  <p class=MsoNormal><b>Country</b></p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:solid #ED7D31 1.0pt;
+  border-left:none;border-bottom:solid #ED7D31 1.0pt;border-right:none;
+  background:#ED7D31;height:17.0pt'>
+  <p class=MsoNormal><b>Cases</b></p>
+  </td>
+  <td width=102 valign=top style='border-top:solid #ED7D31 1.0pt;
+  border-left:none;border-bottom:solid #ED7D31 1.0pt;border-right:none;
+  background:#ED7D31;height:17.0pt'>
+  <p class=MsoNormal><b>Cases/Million</b></p>
+  </td>
+  <td width=63 valign=top style='border-top:solid #ED7D31 1.0pt;
+  border-left:none;border-bottom:solid #ED7D31 1.0pt;border-right:none;
+  background:#ED7D31;height:17.0pt'>
+  <p class=MsoNormal><b>Deaths</b></p>
+  </td>
+  <td width=130 valign=top style='border:solid #ED7D31 1.0pt;
+  border-left:none;background:#ED7D31;height:17.0pt'>
+  <p class=MsoNormal><b>Deaths % of Cases</b></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>United States</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>273808</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>827.21</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>7020</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.56</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Italy</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>124632</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2061.33</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>15362</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>12.33</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>France</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>67757</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1038.05</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>7546</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>11.14</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Iran</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>55743</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>663.66</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3452</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>6.19</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Turkey</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>23934</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>283.78</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>501</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.09</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Canada</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>12938</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>342.8</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>214</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1.65</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Korea</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>10237</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>199.67</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>183</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1.79</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Sweden</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>6443</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>637.97</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>373</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>5.79</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Ireland</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>4604</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>932.4</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>137</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.98</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Chile</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>4161</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>217.67</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>27</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0.65</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Poland</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>3627</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>95.83</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>79</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.18</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Romania</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3613</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>187.81</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>141</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3.9</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Japan</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>3271</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>25.86</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>70</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.14</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Finland</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1882</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>339.67</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>25</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1.33</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Mexico</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1688</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>13.09</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>60</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>3.55</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Serbia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1624</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>185.87</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>39</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.4</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>South Africa</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1585</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>26.72</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>9</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>0.57</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Argentina</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1353</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>29.94</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>42</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3.1</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Singapore</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1189</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>203.24</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>0.42</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Estonia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1018</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>767.41</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>13</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1.28</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Slovenia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>977</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>469.95</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>22</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>2.25</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Bosnia &amp; Herzegovina</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>632</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>192.63</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>21</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3.32</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Latvia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>509</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>269.86</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>0.2</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Slovakia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>471</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>86.27</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Uruguay</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>386</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>111.12</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>1.04</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Zambia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>39</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.12</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.56</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=152 nowrap valign=top style='border:solid #F4B083 1.0pt;
+  border-top:none;background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>Mongolia</p>
+  </td>
+  <td width=66 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>14</p>
+  </td>
+  <td width=102 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>4.27</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:none;
+  border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=130 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #F4B083 1.0pt;border-right:solid #F4B083 1.0pt;
+  background:#FBE4D5;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+</div>
+
+<div class="column">
+<table style='border-collapse:collapse'>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFC000 1.0pt;
+  border-right:none;background:#FFC000;height:17.0pt'>
+  <p class=MsoNormal><b><span style='color:black'>Country</span></b></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:solid #FFC000 1.0pt;
+  border-left:none;border-bottom:solid #FFC000 1.0pt;border-right:none;
+  background:#FFC000;height:17.0pt'>
+  <p class=MsoNormal><b><span style='color:black'>Cases</span></b></p>
+  </td>
+  <td width=121 valign=top style='border-top:solid #FFC000 1.0pt;
+  border-left:none;border-bottom:solid #FFC000 1.0pt;border-right:none;
+  background:#FFC000;height:17.0pt'>
+  <p class=MsoNormal><b><span style='color:black'>Cases/Million</span></b></p>
+  </td>
+  <td width=75 valign=top style='border-top:solid #FFC000 1.0pt;
+  border-left:none;border-bottom:solid #FFC000 1.0pt;border-right:none;
+  background:#FFC000;height:17.0pt'>
+  <p class=MsoNormal><b><span style='color:black'>Deaths</span></b></p>
+  </td>
+  <td width=161 valign=top style='border:solid #FFC000 1.0pt;
+  border-left:none;background:#FFC000;height:17.0pt'>
+  <p class=MsoNormal><b><span style='color:black'>Deaths % of Cases</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Norway</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>5510</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>1016.37</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>50</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0.91</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Czechia</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>4472</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>417.59</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>59</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>1.32</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Croatia</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>1126</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>274.28</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>12</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>1.07</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Armenia</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>746</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>251.75</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>7</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0.94</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Tunisia</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>553</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>46.79</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>19</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>3.44</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Belarus</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>440</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>46.56</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>4</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0.91</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Ukraine</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>1251</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>28.6</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>32</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>2.56</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Kazakhstan</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>531</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>28.28</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>5</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0.94</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Fiji</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>12</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>13.39</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  background:#FFF2CC;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=84 nowrap valign=top style='border:solid #FFD966 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>Uzbekistan</span></p>
+  </td>
+  <td width=68 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>298</span></p>
+  </td>
+  <td width=121 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>8.9</span></p>
+  </td>
+  <td width=75 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>2</span></p>
+  </td>
+  <td width=161 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #FFD966 1.0pt;border-right:solid #FFD966 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal><span style='color:black'>0.67</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<div class="column">
+<table style='border-collapse:collapse;border:none'>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #70AD47 1.0pt;
+  border-right:none;background:#70AD47;height:17.0pt'>
+  <p class=MsoNormal><b>Country</b></p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  background:#70AD47;height:17.0pt'>
+  <p class=MsoNormal><b>Cases</b></p>
+  </td>
+  <td width=103 valign=top style='border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  background:#70AD47;height:17.0pt'>
+  <p class=MsoNormal><b>Cases/Million</b></p>
+  </td>
+  <td width=63 valign=top style='border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  background:#70AD47;height:17.0pt'>
+  <p class=MsoNormal><b>Deaths</b></p>
+  </td>
+  <td width=152 valign=top style='border:solid #70AD47 1.0pt;
+  border-left:none;background:#70AD47;height:17.0pt'>
+  <p class=MsoNormal><b>Deaths % of Cases</b></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>China</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>82930</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>57.62</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>3338</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>4.03</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Brazil</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>9056</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>42.6</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>359</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3.96</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Russian</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>4731</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>32.42</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>43</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0.91</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal><b>India</b></p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3374</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.44</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>77</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.28</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Philippines</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>3094</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>28.23</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>144</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>4.65</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Pakistan</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2880</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>13.04</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>45</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1.56</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Indonesia</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>2092</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>7.65</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>191</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>9.13</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Thailand</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2067</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>29.61</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>20</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0.97</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Afghanistan</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>299</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>7.68</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>7</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>2.34</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>VietNam</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>240</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.47</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Nigeria</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>210</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>1.02</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>1.9</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Kenya</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>122</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>2.27</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>4</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>3.28</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Cambodia</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>114</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>6.82</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Bangladesh</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>70</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0.43</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>8</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>11.43</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Congo</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>45</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>8.16</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>11.11</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Ethiopia</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>38</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0.33</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Myanmar</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>20</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0.37</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;height:17.0pt'>
+  <p class=MsoNormal>Tanzania</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>20</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>0.33</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>1</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  height:17.0pt'>
+  <p class=MsoNormal>5</p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td width=96 nowrap valign=top style='border:solid #A8D08D 1.0pt;
+  border-top:none;background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>Mozambique</p>
+  </td>
+  <td width=62 nowrap valign=top style='border-top:none;
+  border-left:none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>10</p>
+  </td>
+  <td width=103 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0.32</p>
+  </td>
+  <td width=63 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+  <td width=152 valign=top style='border-top:none;border-left:
+  none;border-bottom:solid #A8D08D 1.0pt;border-right:solid #A8D08D 1.0pt;
+  background:#E2EFD9;height:17.0pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+</table>
+</div>
+</div>
+<p>
+
+
+<div>
+Note: This is a representation of WHO Situation Report. Data as of 5th April 2020.
+<p>
+United States and Canada did not have a BCG Vaccination program.
+</div>
+</body>
+<script>
+// Themes begin
+//am4core.useTheme(am4themes_animated);
+// Themes end
+
+ // Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+chart.logo.height = -20;
+chart.logo.width = -20;
+// Set map definition
+chart.geodata = am4geodata_worldIndiaLow;
+
+// Set projection
+chart.projection = new am4maps.projections.Miller();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+//Set min/max fill color for each area
+polygonSeries.heatRules.push({
+  property: "fill",
+  target: polygonSeries.mapPolygons.template,
+  //min: chart.colors.getIndex(1).brighten(1),
+  //max: chart.colors.getIndex(5).brighten(-0.3)
+});
+
+// Make map load polygon data (state shapes and names) from GeoJSON
+polygonSeries.useGeodata = true;
+
+// Set heatmap values for each state
+polygonSeries.data = [
+  {
+    "id": "AF",
+    "population": 38928346,
+    "value": 299,
+    "affected-per-mil": 7.68,
+    "deaths": 7,
+    "deaths-percentage": 2.34,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "AM",
+    "population": 2963243,
+    "value": 746,
+    "affected-per-mil": 251.75,
+    "deaths": 7,
+    "deaths-percentage": 0.94,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "AR",
+    "population": 45195774,
+    "value": 1353,
+    "affected-per-mil": 29.94,
+    "deaths": 42,
+    "deaths-percentage": 3.1,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "BA",
+    "population": 3280819,
+    "value": 632,
+    "affected-per-mil": 192.63,
+    "deaths": 21,
+    "deaths-percentage": 3.32,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "BD",
+    "population": 164689383,
+    "value": 70,
+    "affected-per-mil": 0.43,
+    "deaths": 8,
+    "deaths-percentage": 11.43,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "BR",
+    "population": 212559417,
+    "value": 9056,
+    "affected-per-mil": 42.6,
+    "deaths": 359,
+    "deaths-percentage": 3.96,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "BY",
+    "population": 9449323,
+    "value": 440,
+    "affected-per-mil": 46.56,
+    "deaths": 4,
+    "deaths-percentage": 0.91,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "CA",
+    "population": 37742154,
+    "value": 12938,
+    "affected-per-mil": 342.8,
+    "deaths": 214,
+    "deaths-percentage": 1.65,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "CD",
+    "population": 5518087,
+    "value": 45,
+    "affected-per-mil": 8.16,
+    "deaths": 5,
+    "deaths-percentage": 11.11,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "CL",
+    "population": 19116201,
+    "value": 4161,
+    "affected-per-mil": 217.67,
+    "deaths": 27,
+    "deaths-percentage": 0.65,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "CN",
+    "population": 1439323776,
+    "value": 82930,
+    "affected-per-mil": 57.62,
+    "deaths": 3338,
+    "deaths-percentage": 4.03,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "CZ",
+    "population": 10708981,
+    "value": 4472,
+    "affected-per-mil": 417.59,
+    "deaths": 59,
+    "deaths-percentage": 1.32,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "EE",
+    "population": 1326535,
+    "value": 1018,
+    "affected-per-mil": 767.41,
+    "deaths": 13,
+    "deaths-percentage": 1.28,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "ET",
+    "population": 114963588,
+    "value": 38,
+    "affected-per-mil": 0.33,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "FI",
+    "population": 5540720,
+    "value": 1882,
+    "affected-per-mil": 339.67,
+    "deaths": 25,
+    "deaths-percentage": 1.33,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "FJ",
+    "population": 896445,
+    "value": 12,
+    "affected-per-mil": 13.39,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "FR",
+    "population": 65273511,
+    "value": 67757,
+    "affected-per-mil": 1038.05,
+    "deaths": 7546,
+    "deaths-percentage": 11.14,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "HR",
+    "population": 4105267,
+    "value": 1126,
+    "affected-per-mil": 274.28,
+    "deaths": 12,
+    "deaths-percentage": 1.07,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "ID",
+    "population": 273523615,
+    "value": 2092,
+    "affected-per-mil": 7.65,
+    "deaths": 191,
+    "deaths-percentage": 9.13,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "IE",
+    "population": 4937786,
+    "value": 4604,
+    "affected-per-mil": 932.4,
+    "deaths": 137,
+    "deaths-percentage": 2.98,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "IN",
+    "population": 1380004385,
+    "value": 3374,
+    "affected-per-mil": 2.44,
+    "deaths": 77,
+    "deaths-percentage": 2.28,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "IN",
+    "population": 1380004385,
+    "value": 3374,
+    "affected-per-mil": 2.44,
+    "deaths": 77,
+    "deaths-percentage": 2.28,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "IR",
+    "population": 83992949,
+    "value": 55743,
+    "affected-per-mil": 663.66,
+    "deaths": 3452,
+    "deaths-percentage": 6.19,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "IT",
+    "population": 60461826,
+    "value": 124632,
+    "affected-per-mil": 2061.33,
+    "deaths": 15362,
+    "deaths-percentage": 12.33,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "JP",
+    "population": 126476461,
+    "value": 3271,
+    "affected-per-mil": 25.86,
+    "deaths": 70,
+    "deaths-percentage": 2.14,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "KE",
+    "population": 53771296,
+    "value": 122,
+    "affected-per-mil": 2.27,
+    "deaths": 4,
+    "deaths-percentage": 3.28,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "KH",
+    "population": 16718965,
+    "value": 114,
+    "affected-per-mil": 6.82,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "KP",
+    "population": 51269185,
+    "value": 10237,
+    "affected-per-mil": 199.67,
+    "deaths": 183,
+    "deaths-percentage": 1.79,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "KZ",
+    "population": 18776707,
+    "value": 531,
+    "affected-per-mil": 28.28,
+    "deaths": 5,
+    "deaths-percentage": 0.94,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "LV",
+    "population": 1886198,
+    "value": 509,
+    "affected-per-mil": 269.86,
+    "deaths": 1,
+    "deaths-percentage": 0.2,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "MM",
+    "population": 54409800,
+    "value": 20,
+    "affected-per-mil": 0.37,
+    "deaths": 1,
+    "deaths-percentage": 5,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "MN",
+    "population": 3278290,
+    "value": 14,
+    "affected-per-mil": 4.27,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "MX",
+    "population": 128932753,
+    "value": 1688,
+    "affected-per-mil": 13.09,
+    "deaths": 60,
+    "deaths-percentage": 3.55,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "MZ",
+    "population": 31255435,
+    "value": 10,
+    "affected-per-mil": 0.32,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "NG",
+    "population": 206139589,
+    "value": 210,
+    "affected-per-mil": 1.02,
+    "deaths": 4,
+    "deaths-percentage": 1.9,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "NO",
+    "population": 5421241,
+    "value": 5510,
+    "affected-per-mil": 1016.37,
+    "deaths": 50,
+    "deaths-percentage": 0.91,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "PH",
+    "population": 109581078,
+    "value": 3094,
+    "affected-per-mil": 28.23,
+    "deaths": 144,
+    "deaths-percentage": 4.65,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "PK",
+    "population": 220892340,
+    "value": 2880,
+    "affected-per-mil": 13.04,
+    "deaths": 45,
+    "deaths-percentage": 1.56,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "PL",
+    "population": 37846611,
+    "value": 3627,
+    "affected-per-mil": 95.83,
+    "deaths": 79,
+    "deaths-percentage": 2.18,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "RO",
+    "population": 19237691,
+    "value": 3613,
+    "affected-per-mil": 187.81,
+    "deaths": 141,
+    "deaths-percentage": 3.9,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "RS",
+    "population": 8737371,
+    "value": 1624,
+    "affected-per-mil": 185.87,
+    "deaths": 39,
+    "deaths-percentage": 2.4,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "RU",
+    "population": 145934462,
+    "value": 4731,
+    "affected-per-mil": 32.42,
+    "deaths": 43,
+    "deaths-percentage": 0.91,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "SE",
+    "population": 10099265,
+    "value": 6443,
+    "affected-per-mil": 637.97,
+    "deaths": 373,
+    "deaths-percentage": 5.79,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "SG",
+    "population": 5850342,
+    "value": 1189,
+    "affected-per-mil": 203.24,
+    "deaths": 5,
+    "deaths-percentage": 0.42,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "SI",
+    "population": 2078938,
+    "value": 977,
+    "affected-per-mil": 469.95,
+    "deaths": 22,
+    "deaths-percentage": 2.25,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "SK",
+    "population": 5459642,
+    "value": 471,
+    "affected-per-mil": 86.27,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "TH",
+    "population": 69799978,
+    "value": 2067,
+    "affected-per-mil": 29.61,
+    "deaths": 20,
+    "deaths-percentage": 0.97,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "TN",
+    "population": 11818619,
+    "value": 553,
+    "affected-per-mil": 46.79,
+    "deaths": 19,
+    "deaths-percentage": 3.44,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "TR",
+    "population": 84339067,
+    "value": 23934,
+    "affected-per-mil": 283.78,
+    "deaths": 501,
+    "deaths-percentage": 2.09,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "TZ",
+    "population": 59734218,
+    "value": 20,
+    "affected-per-mil": 0.33,
+    "deaths": 1,
+    "deaths-percentage": 5,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "UA",
+    "population": 43733762,
+    "value": 1251,
+    "affected-per-mil": 28.6,
+    "deaths": 32,
+    "deaths-percentage": 2.56,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "US",
+    "population": 331002651,
+    "value": 273808,
+    "affected-per-mil": 827.21,
+    "deaths": 7020,
+    "deaths-percentage": 2.56,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "UY",
+    "population": 3473730,
+    "value": 386,
+    "affected-per-mil": 111.12,
+    "deaths": 4,
+    "deaths-percentage": 1.04,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "UZ",
+    "population": 33469203,
+    "value": 298,
+    "affected-per-mil": 8.9,
+    "deaths": 2,
+    "deaths-percentage": 0.67,
+    "fill": am4core.color("#ffff99")
+  },
+  {
+    "id": "VN",
+    "population": 97338579,
+    "value": 240,
+    "affected-per-mil": 2.47,
+    "deaths": 0,
+    "deaths-percentage": 0,
+    "fill": am4core.color("#c6e0b4")
+  },
+  {
+    "id": "ZA",
+    "population": 59308690,
+    "value": 1585,
+    "affected-per-mil": 26.72,
+    "deaths": 9,
+    "deaths-percentage": 0.57,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "ZM",
+    "population": 18383955,
+    "value": 39,
+    "affected-per-mil": 2.12,
+    "deaths": 1,
+    "deaths-percentage": 2.56,
+    "fill": am4core.color("#ff6600")
+  },
+  {
+    "id": "ZW",
+    "population": 14862924,
+    "value": 9,
+    "affected-per-mil": 0.61,
+    "deaths": 1,
+    "deaths-percentage": 11.11,
+    "fill": am4core.color("#ffff99")
+  }
+];
+
+/*
+// Set up heat legend
+let heatLegend = chart.createChild(am4maps.HeatLegend);
+heatLegend.series = polygonSeries;
+heatLegend.align = "right";
+heatLegend.valign = "bottom";
+heatLegend.width = am4core.percent(20);
+heatLegend.marginRight = am4core.percent(4);
+heatLegend.minValue = 0;
+heatLegend.maxValue = 2000;
+
+// Set up custom heat map legend labels using axis ranges
+var minRange = heatLegend.valueAxis.axisRanges.create();
+minRange.value = heatLegend.minValue;
+minRange.label.text = "0";
+var maxRange = heatLegend.valueAxis.axisRanges.create();
+maxRange.value = heatLegend.maxValue;
+maxRange.label.text = "2000";
+
+// Blank out internal heat legend value axis labels
+heatLegend.valueAxis.renderer.labels.template.adapter.add("text", function(labelText) {
+  return "";
+});
+*/
+
+/* Add legend */
+var legend = new am4maps.Legend();
+legend.parent = chart.chartContainer;
+legend.background.fill = am4core.color("#000");
+legend.background.fillOpacity = 0.05;
+legend.width = 160;
+legend.align = "right";
+legend.padding(10, 15, 10, 15);
+legend.data = [{
+  "name": "Stopped",
+  "fill":"#ff6600"
+}, {
+  "name": "Recommended",
+  "fill": "#ffff99"
+}, {
+  "name": "Continued",
+  "fill": "#c6e0b4"
+}, {
+  "name": "Unknown",
+  "fill": "#eeeeee"
+}];
+legend.itemContainers.template.clickable = false;
+legend.itemContainers.template.focusable = false;
+
+var legendTitle = legend.createChild(am4core.Label);
+legendTitle.text = "BCG Vaccination";
+
+
+// Configure series tooltip
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}: {value} cases,\nPopulation: {population},\nCases per mill: {affected-per-mil},\nDeaths: {deaths},\nDeath % of affected: {deaths-percentage}";
+polygonTemplate.nonScalingStroke = true;
+polygonTemplate.strokeWidth = 0.5;
+polygonTemplate.propertyFields.fill = "fill";
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = am4core.color("#3c5bdc");
+
+</script>
+
+<script>
+ // Create map instance
+
+var chart1 = am4core.create("chartdiv1", am4charts.XYChart);
+chart1.logo.height = 0;
+chart1.logo.width = 0;
+// some extra padding for range labels
+chart1.paddingBottom = 50;
+
+chart1.cursor = new am4charts.XYCursor();
+chart1.scrollbarX = new am4core.Scrollbar();
+
+// will use this to store colors of the same items
+var colors = {};
+
+var categoryAxis = chart1.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.minGridDistance = 10;
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.dataItems.template.text = "{realName}";
+categoryAxis.adapter.add("tooltipText", function(tooltipText, target){
+  return categoryAxis.tooltipDataItem.dataContext.realName;
+})
+categoryAxis.renderer.labels.template.rotation = 90;
+
+var valueAxis = chart1.yAxes.push(new am4charts.ValueAxis());
+valueAxis.tooltip.disabled = true;
+valueAxis.min = 0;
+
+var axisBreak = valueAxis.axisBreaks.create();
+axisBreak.startValue = 25000;
+axisBreak.endValue = 55000;
+axisBreak.breakSize = 0.002;
+
+var axisBreak1 = valueAxis.axisBreaks.create();
+axisBreak1.startValue = 90000;
+axisBreak1.endValue = 110000;
+axisBreak1.breakSize = 0.002;
+
+var axisBreak2 = valueAxis.axisBreaks.create();
+axisBreak2.startValue = 120000;
+axisBreak2.endValue = 270000;
+axisBreak2.breakSize = 0.002;
+
+// fixed axis break
+//var d = (axisBreak.endValue - axisBreak.startValue) / (valueAxis.max - valueAxis.min);
+//axisBreak.breakSize = 0.05 * (1 - d) / d; // 0.05 means that the break will take 5% of the total value axis height
+
+
+// single column series for all data
+var columnSeries = chart1.series.push(new am4charts.ColumnSeries());
+columnSeries.columns.template.width = am4core.percent(80);
+columnSeries.tooltipText = "{provider}\n{realName}\nCases:{valueY}";
+columnSeries.dataFields.categoryX = "category";
+columnSeries.dataFields.valueY = "value";
+
+
+
+
+// fill adapter, here we save color value to colors object so that each time the item has the same name, the same color is used
+columnSeries.columns.template.adapter.add("fill", function(fill, target) {
+ var name = target.dataItem.dataContext.realName;
+ if (!colors[name]) {
+   colors[name] = chart1.colors.next();
+ }
+ target.stroke = colors[name];
+ return colors[name];
+})
+
+
+var rangeTemplate = categoryAxis.axisRanges.template;
+rangeTemplate.tick.disabled = false;
+rangeTemplate.tick.location = 0;
+rangeTemplate.tick.strokeOpacity = 0.6;
+rangeTemplate.tick.length = 60;
+rangeTemplate.grid.strokeOpacity = 0.5;
+rangeTemplate.label.tooltip = new am4core.Tooltip();
+rangeTemplate.label.tooltip.dy = -10;
+rangeTemplate.label.cloneTooltip = false;
+
+///// DATA
+var chartData = [];
+var lineSeriesData = [];
+
+var data =
+{
+ "BCG Stopped": {
+    "United States": 273808,
+    "Italy": 124632,
+    "France": 67757,
+    "Iran": 55743,
+    "Turkey": 23934,
+    "Canada": 12938,
+    "Korea": 10237,
+    "Sweden": 6443,
+    "Ireland": 4604,
+    "Chile": 4161,
+    "Poland": 3627,
+    "Romania": 3613,
+    "Japan": 3271,
+    "Finland": 1882,
+    "Mexico": 1688,
+    "Serbia": 1624,
+    "SouthAfrica": 1585,
+    "Argentina": 1353,
+    "Singapore": 1189,
+    "Estonia": 1018,
+    "Slovenia": 977,
+    "Bosnia & Herzegovina": 632,
+    "Latvia": 509,
+    "Slovakia": 471,
+    "Uruguay": 386,
+    "Zambia": 39,
+    "Mongolia": 14
+  },
+ "BCG Recommended": {
+    "Norway": 5510,
+    "Czechia": 4472,
+    "Croatia": 1126,
+    "Armenia": 746,
+    "Tunisia": 553,
+    "Belarus": 440,
+    "Ukraine": 1251,
+    "Kazakhstan": 531,
+    "Fiji": 12,
+    "Uzbekistan": 298,
+    "Zimbabwe": 9
+  },
+ "BCG Continued": {
+    "China": 82930,
+    "Brazil": 9056,
+    "Russian": 4731,
+    "India": 3374,
+    "Philippines": 3094,
+    "Pakistan": 2880,
+    "Indonesia": 2092,
+    "Thailand": 2067,
+    "Afghanistan": 299,
+    "VietNam": 240,
+    "Nigeria": 210,
+    "Kenya": 122,
+    "Cambodia": 114,
+    "Bangladesh": 70,
+    "Congo": 45,
+    "Ethiopia": 38,
+    "Myanmar": 20,
+    "Tanzania": 20,
+    "Mozambique": 10
+  }
+}
+
+// process data ant prepare it for the chart
+for (var providerName in data) {
+ var providerData = data[providerName];
+
+ // add data of one provider to temp array
+ var tempArray = [];
+ var count = 0;
+ // add items
+ for (var itemName in providerData) {
+   if(itemName != "quantity"){
+   count++;
+   // we generate unique category for each column (providerName + "_" + itemName) and store realName
+   tempArray.push({ category: providerName + "_" + itemName, realName: itemName, value: providerData[itemName], provider: providerName})
+   }
+ }
+ // sort temp array
+ tempArray.sort(function(a, b) {
+   if (a.value > b.value) {
+   return 1;
+   }
+   else if (a.value < b.value) {
+   return -1
+   }
+   else {
+   return 0;
+   }
+ })
+
+ // add quantity and count to middle data item (line series uses it)
+ var lineSeriesDataIndex = Math.floor(count / 2);
+ tempArray[lineSeriesDataIndex].quantity = providerData.quantity;
+ tempArray[lineSeriesDataIndex].count = count;
+ // push to the final data
+ am4core.array.each(tempArray, function(item) {
+   chartData.push(item);
+ })
+
+ // create range (the additional label at the bottom)
+ var range = categoryAxis.axisRanges.create();
+ range.category = tempArray[0].category;
+ range.endCategory = tempArray[tempArray.length - 1].category;
+ range.label.text = tempArray[0].provider;
+ range.label.dy = 30;
+ range.label.rotation = 0;
+ range.label.truncate = true;
+ range.label.fontWeight = "bold";
+ range.label.tooltipText = tempArray[0].provider;
+
+ range.label.adapter.add("maxWidth", function(maxWidth, target){
+   var range = target.dataItem;
+   var startPosition = categoryAxis.categoryToPosition(range.category, 0);
+   var endPosition = categoryAxis.categoryToPosition(range.endCategory, 1);
+   var startX = categoryAxis.positionToCoordinate(startPosition);
+   var endX = categoryAxis.positionToCoordinate(endPosition);
+   return endX - startX;
+ })
+}
+
+chart1.data = chartData;
+
+// last tick
+var range = categoryAxis.axisRanges.create();
+range.category = chart1.data[chart1.data.length - 1].category;
+range.label.disabled = true;
+range.tick.location = 1;
+range.grid.location = 1;
+
+</script>
+
+</html>
